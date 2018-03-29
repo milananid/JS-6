@@ -108,23 +108,29 @@ textarea {
 
 .hide-scroll {
   width: 70%;
+  padding-left: 15%;
+  padding-right: 15%;
   text-align: center;
-  padding-top: 20%;
-  padding-bottom:20%;
-  background: red;
-  color: #fff;
-  font-size: 60px;
-  opacity: 0;
-  transform: translateY(50%);
-  transition: all 500ms;
-  margin-left: 15%;
-  margin-bottom:50px;
-}
-.hide-scroll.show {
-	opacity:1;
-  transform: translateY(0%);
-}
 
+  background: #f2f2f2;
+  color: #333;
+  opacity: 1;
+  margin-bottom:150px;
+}
+.hide-scroll  h1 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.hide-scroll  p {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.hide-scroll  img {
+}
+.hide-scroll.show {}
+.hide-scroll.show img,
+.hide-scroll.show p,
+.hide-scroll.show h1 {}
 
 
 

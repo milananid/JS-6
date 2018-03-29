@@ -8,6 +8,11 @@ $(function() {
 		threshold.push(i);
 	}
 
+  TweenMax.set('.hide-scroll h1, .hide-scroll p, .hide-scroll img', {
+    opacity: 0,
+    y: 100,
+  });
+
   var config = {
   	root: null,
     rootMargin: '0px', // top right bottom left
@@ -31,6 +36,8 @@ function showBox(t, r, b, l){
         if(ratio >= 20){
         	 //l'elemento è entrato
         	 $(el.target).addClass('show');
+           var myObjs =  $(el.target).children();
+           TweenMax.staggerTo(myObjs, 1, {opacity:1, y:0, ease:Expo.easeInOut}, 0.5);
         }else{
         	 //l'elemento è uscito
         }
@@ -54,6 +61,9 @@ function showBox(t, r, b, l){
         elems.each(function(index, elem){
           observer.observe(elem);
         });
+
+        //scroldirectiondetect
+        var scrlA =
       }
     });
   }
@@ -64,3 +74,13 @@ function showBox(t, r, b, l){
 
 
 });
+
+
+
+//https://jsfiddle.net/MUvsG/487/
+/*
+dato lo script modificarlo in modo che allow scroll di pagina gli elementi interessati
+entrino nella viewport con un'animazione realizzata sfruttando lo stagger di gsap.
+Allo stesso modo gli elementi devono poter uscire dalla viewport in maniera consona
+alla direzione dello scroll di pagina.
+*/
